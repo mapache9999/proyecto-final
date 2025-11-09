@@ -1,0 +1,29 @@
+{% extends "base_simple.html" %}
+{% block content %}
+<h2>Asistencias</h2>
+<form method="POST" action="{{ url_for('agregar_asistencia') }}">
+    <select name="id_alumno" required>
+        <option value="">Seleccionar alumno</option>
+        {% for a in alumnos %}
+        <option value="{{ a.id_alumno }}">{{ a.nombre }} {{ a.apellido }}</option>
+        {% endfor %}
+    </select>
+    <input type="date" name="fecha">
+    <label><input type="radio" name="estado" value="Presente" required> Presente</label>
+    <label><input type="radio" name="estado" value="Ausente" required> Ausente</label>
+    <button type="submit">Registrar</button>
+</form>
+
+<table>
+<tr><th>Alumno</th><th>Fecha</th><th>Estado</th><th>Acción</th></tr>
+{% for asis in asistencias %}
+<tr>
+    <td>{{ asis['nombre'] }} {{ asis['apellido'] }}</td>
+    <td>{{ asis['fecha'] }}</td>
+    <td>{{ asis['estado'] }}</td>
+    <td><a href="{{ url_for('eliminar_asistencia', id_asistencia=asis['id_asistencia']) }}">Eliminar</a></td>
+</tr>
+{% endfor %}
+</table>
+<a href="{{ url_for('index') }}">Volver</a>
+{% endblock %}

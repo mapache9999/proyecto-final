@@ -1,0 +1,35 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffeef5;
+    text-align: center;
+    padding: 20px;
+}
+table {
+    width: 90%;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #C71585;
+    padding: 8px;
+}
+th {
+    background-color: #C71585;
+    color: white;
+}
+a, button {
+    color: white;
+    background-color: #C71585;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+a:hover, button:hover {
+    background-color: #dc143c;
+}
+input[type="text"], select, input[type="date"] {
+    padding: 6px;
+    margin: 4px;
+}

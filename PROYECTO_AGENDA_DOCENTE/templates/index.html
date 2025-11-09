@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Agenda Docente</title>
+
+    <!-- Favicon de libro -->
+    <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/29/29302.png"/>
+
+    <!-- Enlace al CSS si tenés un archivo style.css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #4a004a;
+            background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?auto=format&fit=crop&w=1350&q=80');
+            /* Imagen de flores de primavera */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Capa semitransparente para mejorar la legibilidad */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.75);
+            z-index: -1;
+        }
+
+        h1 {
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 182, 193, 0.85);
+            color: #8B008B;
+            border-bottom: 3px solid #C71585;
+            margin: 0;
+        }
+
+        nav {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        nav a {
+            color: #C71585;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+            background-color: rgba(255, 240, 245, 0.9);
+            padding: 8px 12px;
+            border-radius: 8px;
+            border: 1px solid #C71585;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #C71585;
+            color: white;
+        }
+
+        section {
+            text-align: center;
+            background-color: rgba(255, 240, 245, 0.85);
+            width: 60%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(199, 21, 133, 0.3);
+        }
+
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>📚 Agenda Docente</h1>
+
+    <nav>
+        <a href="{{ url_for('cursos') }}">Cursos</a> |
+        <a href="{{ url_for('alumnos') }}">Alumnos</a> |
+        <a href="{{ url_for('asistencias') }}">Asistencias</a>
+    </nav>
+
+    <section>
+        <h2>🌷 Bienvenido a la Agenda Docente 🌷</h2>
+        <p>Utiliza el menú para navegar entre las diferentes secciones y gestionar cursos, alumnos y asistencias.</p>
+    </section>
+</body>
+</html>
